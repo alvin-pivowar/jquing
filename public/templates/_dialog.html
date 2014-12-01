@@ -1,0 +1,26 @@
+﻿<div ng-controller="dialogCtrl as vm">
+    <h2>Dialog</h2>
+
+    <em>Open content in an interactive overlay.</em><br /><br />
+    <input type="radio" ng-model="vm.isDialogOpen" ng-value="true" /><label>&nbsp;Open Dialog</label>&nbsp;&nbsp;
+    <input type="radio" ng-model="vm.isDialogOpen" ng-value="false" ng-disabled="vm.suppressClose" /><label>&nbsp;Close Dialog</label>&nbsp;&nbsp;
+    <input type="checkbox" ng-model="vm.suppressClose" />&nbsp;<label>Suppress Close</label>&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <button type="button" class="btn" disabled ng-class='{"btn-default": !vm.onOpenFired, "btn-success": vm.onOpenFired}'>on-open</button>
+    <button type="button" class="btn" disabled ng-class='{"btn-default": !vm.onBeforeCloseFired, "btn-warning": vm.onBeforeCloseFired}'>on-before-close</button>
+    <button type="button" class="btn" disabled ng-class='{"btn-default": !vm.onCloseFired, "btn-danger": vm.onCloseFired}'>on-close</button><br /><br />
+    <span ng-hide="!vm.favoriteStooge">My favorite stooge is {{vm.favoriteStooge}}.</span>
+
+    <jqui-dialog
+                 options='{title: "Basic Dialog", buttons: [{text: "moe", tabIndex: -1}, {text: "larry", tabIndex: -1}, {text: "curly", tabIndex: -1}]}'
+                 open="vm.isDialogOpen"
+                 on-button="vm.onDialogButton(button)"
+                 on-open="vm.onDialogOpen()"
+                 on-before-close="vm.onDialogBeforeClose()"
+                 on-close="vm.onDialogClose()">
+        <p>
+            This is the default dialog which is useful for displaying information.
+            The dialog window can be moved, resized and closed with the 'x' icon.
+        </p>
+    </jqui-dialog>
+</div>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html ng-app="DemoApp">
+<head>
+    <title>jQuery UI for Angular</title>
+    <base href="/" />
+
+    <link href="Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="Content/css/jquery.ui.base.css" rel="stylesheet" />
+    <link href="Content/css/font-awesome.css" rel="stylesheet" />
+    <link href="Content/css/jquery.ui.theme.css" rel="stylesheet" />
+    <link href="Content/css/jquery.ui.theme.font-awesome.css" rel="stylesheet" />
+
+    <link href="Content/css/demo.css" rel="stylesheet" />
+
+    <script src="Content/js/jquery.js"></script>
+    <script src="Content/js/jquery-ui.js"></script>
+
+    <script src="Content/js/angular.js"></script>
+    <script src="Content/js/angular-route.js"></script>
+
+    <script src="Content/scripts/scripts.js"></script>
+</head>
+<body class="container" style="width:100%">
+    <header class="row">
+        <h1 class="col-md-12">jQuery UI for Angular</h1>
+    </header>
+    <div class="row">
+        <div class="col-md-2 list-group" ng-controller="navCtrl as vm">
+            <a href="#accordion" class="list-group-item" ng-class='{active: (vm.selectedTab === "accordion")}'>Accordion</a>
+            <a href="#dialog" class="list-group-item" ng-class='{active: (vm.selectedTab === "dialog")}'>Dialog</a>
+        </div>
+        <div class="col-md-10" ng-view></div>
+    </div>
+</body>
+</html>

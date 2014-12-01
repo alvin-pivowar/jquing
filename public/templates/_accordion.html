@@ -1,0 +1,87 @@
+﻿<jqui-accordian ng-controller="accordionCtrl as vm">
+    <h2>Accordion</h2>
+
+    <em>Displays collapsible content panels for presenting information in a limited amount of space.</em><br /><br />
+
+    <input type="checkbox" ng-model="vm.showOnBeforeActivateAlert" /><label>&nbsp;Show on-before-activate alert.</label>&nbsp;&nbsp;
+    <input type="checkbox" ng-model="vm.showOnActivateAlert" /><label>&nbsp;Show on-activate alert.</label>&nbsp;&nbsp;
+    <input type="checkbox" ng-model="vm.prohibitActivations" /><label>&nbsp;Prohibit activations.</label>&nbsp;&nbsp;
+    <input type="checkbox" ng-model="vm.disable" /><label>&nbsp;Disable</label><br /><br />
+
+    <label>Active Panel</label>&nbsp;&nbsp;
+    <select ng-model="vm.activePanel" ng-disabled="vm.prohibitActivations">
+        <option value="">(none)</option>
+        <option value="0">jqui-accordion</option>
+        <option value="1">options</option>
+        <option value="2">ng-model</option>
+        <option value="3">disable</option>
+        <option value="4">destroy</option>
+        <option value="5">on-activate</option>
+        <option value="6">on-before-activate</option>
+    </select>
+
+    <hr />
+
+    <jqui-accordion ng-model="vm.activePanel" options='{collapsible: true, heightStyle: "content"}' disable="vm.disable" on-activate="vm.onActivate(event)" on-before-activate="vm.onBeforeActivate(event)">
+        <h3>jqui-accordion</h3>
+        <div>
+            <p>
+                The directive name can be used either as an element name or attribute. It takes no parameters.
+            </p>
+        </div>
+        <h3>options</h3>
+        <div>
+            <p>
+                The options attribute is optional. It requires one parameter; a JSON object that contains the (name, value) options used in creating the accordion.
+                All of the jQuery options are supported.
+            </p>
+        </div>
+        <h3>ng-model</h3>
+        <div>
+            <p>
+                ng-model is optional.  When it is present it implements a two-way binding with the <em>active</em> property of the accordion.
+                This is how you would programmatically control which panel is open. When binding to the control:
+                <ul>
+                    <li>Any positive (0-based) integer indicates a panel from the beginning.</li>
+                    <li>Any negative (1-based) integer indicates a panel from the end.</li>
+                    <li>
+                        Either an undefined, NaN, null, or the empty string (default) value indicates that no panel should be open.
+                        To use this feature, you must specify the <code ng-non-bindable>{collapsible: true}</code> option when creating the accordion.
+                    </li>
+                </ul>
+            </p>
+        </div>
+        <h3>disable</h3>
+        <div>
+            <p>
+                The disable attribute is optional.  It provides one-way binding to the accordion.  It assumes the value will be <em>true</em> or <em>false</em>.
+                You can use either of these forms: <code ng-non-bindable>disable="{{vm.disabled}}"</code> or <code ng-non-bindable>disable="vm.disabled"</code>.
+            </p>
+        </div>
+        <h3>destroy</h3>
+        <div>
+            <p>
+                The destroy attribute is optional. It provides one-way binding to the accordion.  The accordion will be destroyed when the value is <em>true</em>.
+                Note that this operation cannot be undone.
+                You can use either of these forms: <code ng-non-bindable>destroy="{{vm.destroy}}"</code> or <code ng-non-bindable>destroy="vm.destroy"</code>.
+            </p>
+        </div>
+        <h3>on-activate</h3>
+        <div>
+            <p>
+                This optional callback attribute is specified like this: <code ng-non-bindable>on-activate="vm.onActivate(event)"</code>.
+                The event object has two properties: <var>oldIndex</var> and <var>newIndex</var>.
+                This callback occurs after a change has been made to the accordion.
+                The values of these two properties are as described in the ng-model section.
+            </p>
+        </div>
+        <h3>on-before-activate</h3>
+        <div>
+            <p>
+                This optional callback attribute is specified like this: <code ng-non-bindable>on-before-activate="vm.onActivate(event)"</code>.
+                It is similar to the on-activate callback except that it occurs before the active panel changes.
+                If you return <em>true</em> from the callback, then the old panel will close and the new one open.
+                If you return <em>false</em>, then no change will occur.
+            </p>
+        </div>
+</jqui-accordian>

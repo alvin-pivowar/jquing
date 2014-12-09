@@ -16,6 +16,9 @@
                         .when('/dialog', {
                             templateUrl: 'templates/_dialog.html'
                         })
+                        .when('/draggable', {
+                            templateUrl: 'templates/_draggable.html'
+                        })
                         .otherwise({
                             redirectTo: '/'
                         });

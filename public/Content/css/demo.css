@@ -7,11 +7,23 @@ code {
 header h1 {
   text-align: center;
 }
-.ui-dialog .ui-dialog-titlebar {
+.dialogExample .ui-dialog-titlebar {
   background-color: #337ab7;
 }
-.ui-dialog .ui-dialog-content p {
+.dialogExample .ui-dialog-content p {
   margin-left: 10px;
   margin-right: 10px;
+}
+.draggableExample input[type=text] {
+  width: 40px;
+}
+.draggableExample jqui-draggable {
+  border: solid 2px #337ab7;
+  display: block;
+  height: 100px;
+  width: 140px;
+}
+.draggableExample p {
+  text-align: center;
 }
 /*# sourceMappingURL=demo.css.map */

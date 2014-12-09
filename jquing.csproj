@@ -974,6 +974,8 @@
     <Content Include="public\Content\scripts\accordion\jqui-accordion.js" />
     <Content Include="public\Content\scripts\dialog\dialogCtrl.js" />
     <Content Include="public\Content\scripts\dialog\jqui-dialog.js" />
+    <Content Include="public\Content\scripts\draggable\draggableCtrl.js" />
+    <Content Include="public\Content\scripts\draggable\jqui-draggable.js" />
     <Content Include="public\Content\scripts\jQueryUILib.js" />
     <Content Include="public\Content\scripts\scripts.js">
       <DependentUpon>scripts.js.bundle</DependentUpon>
@@ -1040,6 +1042,7 @@
     <Content Include="public\Content\scripts\nav\mainCtrl.js" />
     <Content Include="public\Content\scripts\nav\navCtrl.js" />
     <Content Include="public\Content\scripts\nav\navService.js" />
+    <Content Include="public\templates\_draggable.html" />
     <Content Include="public\templates\_dialog.html" />
     <Content Include="public\templates\_main.html" />
     <Content Include="public\templates\_accordion.html" />

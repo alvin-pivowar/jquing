@@ -26,6 +26,7 @@
     </header>
     <div class="row">
         <div class="col-md-2 list-group" ng-controller="navCtrl as vm">
+            <a href="#draggable" class="list-group-item" ng-class='{active: (vm.selectedTab === "draggable")}'>Draggable</a>
             <a href="#accordion" class="list-group-item" ng-class='{active: (vm.selectedTab === "accordion")}'>Accordion</a>
             <a href="#dialog" class="list-group-item" ng-class='{active: (vm.selectedTab === "dialog")}'>Dialog</a>
         </div>

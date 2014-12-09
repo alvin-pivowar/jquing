@@ -1,0 +1,17 @@
+﻿<div class="draggableExample" ng-controller="draggableCtrl as vm">
+    <h2>Draggable</h2>
+
+    <em>Allow elements to be moved using the mouse.</em><br /><br />
+
+    <input type="checkbox" ng-model="vm.isDisabled" />&nbsp;<label>Disable</label>&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <button type="button" class="btn" disabled ng-class='{"btn-default": !vm.isStart, "btn-success": vm.isStart}'>on-start</button>
+    <button type="button" class="btn" disabled ng-class='{"btn-default": !vm.isDrag, "btn-warning": vm.isDrag}'>on-drag</button>
+    <button type="button" class="btn" disabled ng-class='{"btn-default": !vm.isStop, "btn-danger": vm.isStop}'>on-stop</button><br /><br />
+
+
+    <label>left:</label>&nbsp;<input type="text" ng-model="vm.position.left" />&nbsp;&nbsp;<label>top:</label>&nbsp;<input type="text" ng-model="vm.position.top" /><br /><br />
+    <jqui-draggable ng-model="vm.position" disable="vm.isDisabled" on-start="vm.onStart()" on-drag="vm.onDrag()" on-stop="vm.onStop()">
+        <p>Drag me around</p>
+    </jqui-draggable>
+</div>

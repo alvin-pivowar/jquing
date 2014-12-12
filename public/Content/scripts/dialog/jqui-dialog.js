@@ -100,8 +100,16 @@
                             $(element).on("dialogopen", function () {
                                 var handler;
 
+                                // Update model in open="prop"
+                                if (attrs.open) {
+                                    handler = $parse(attrs.open);
+                                    if (handler.assign) {
+                                        handler.assign(scope, true);
+                                    }
+                                }
+
+                                // call on-open="fn()"
                                 if (attrs.onOpen) {
-                                    // call on-open="fn()"
                                     handler = $parse(attrs.onOpen);
                                     handler(scope);
                                     $timeout(function () {

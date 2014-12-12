@@ -84,8 +84,11 @@
                                         $timeout(function () { scope.$apply(); });
                                     }
                                     currentActive = newActive;
+
                                     // update ngModel
-                                    ngModel.$setViewValue(newModelValue);
+                                    if (ngModel) {
+                                        ngModel.$setViewValue(newModelValue);
+                                    }
                                 }
                             });
 

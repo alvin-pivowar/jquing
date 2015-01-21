@@ -12,7 +12,7 @@
                 init();
 
                 function init() {
-                    $rootScope.$watch(function () { return navService.selectedTab }, function (newValue) {
+                    $rootScope.$watch(function () { return navService.selectedTab; }, function (newValue) {
                         vm.selectedTab = newValue;
                     });
                 };

@@ -14,7 +14,7 @@
                     restrict: "AE",
                     link: function (scope, element, attrs) {
                         $(function () {
-                            var options;
+                            var options = {};
 
                             // initialization
                             if (attrs.options) {
@@ -128,7 +128,6 @@
 
                 function addButtonHandler(options, scope, attrs) {
                     var i;
-                    var proxy;
 
                     if (!options.buttons) {
                         return;

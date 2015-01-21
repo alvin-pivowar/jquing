@@ -1,4 +1,4 @@
-﻿@import "../../../bower_components/bootstrap-css/css/bootsrap-variables.less";
+﻿@import "../../../bower_components/bootstrap-css/css/bootstrap-variables.less";
 
 body {
     width: 100%
@@ -14,6 +14,17 @@ header {
     }
 }
 
+local-datetime {
+    display: block;
+    margin-bottom: 6px;
+    margin-left: 40px;
+    visibility: hidden;
+
+    span:nth-child(2) {
+        padding-left: 20px;
+    }
+}
+
 .dialogExample {
     .ui-dialog-titlebar {
         background-color: @brand-primary;
@@ -23,7 +34,7 @@ header {
             margin-left: 10px;
             margin-right: 10px;
         }
-        }
+    }
 }
 
 .draggableExample {

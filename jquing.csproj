@@ -93,11 +93,11 @@
     <Content Include="bower_components\angular\angular-csp.css" />
     <Content Include="bower_components\angular\angular.js" />
     <Content Include="bower_components\angular\angular.min.js" />
-    <Content Include="bower_components\bootstrap-css\css\bootsrap-variables.variables.css">
-      <DependentUpon>bootsrap-variables.less</DependentUpon>
+    <Content Include="bower_components\bootstrap-css\css\bootstrap-variables.variables.css">
+      <DependentUpon>bootstrap-variables.less</DependentUpon>
     </Content>
-    <Content Include="bower_components\bootstrap-css\css\bootsrap-variables.variables.min.css">
-      <DependentUpon>bootsrap-variables.variables.css</DependentUpon>
+    <Content Include="bower_components\bootstrap-css\css\bootstrap-variables.variables.min.css">
+      <DependentUpon>bootstrap-variables.variables.css</DependentUpon>
     </Content>
     <Content Include="bower_components\bootstrap-css\css\bootstrap-theme.css" />
     <Content Include="bower_components\bootstrap-css\css\bootstrap-theme.min.css" />
@@ -977,6 +977,8 @@
     <Content Include="public\Content\scripts\draggable\draggableCtrl.js" />
     <Content Include="public\Content\scripts\draggable\jqui-draggable.js" />
     <Content Include="public\Content\scripts\jQueryUILib.js" />
+    <Content Include="public\Content\scripts\nav\localDateTime.js" />
+    <Content Include="public\Content\scripts\nav\timeService.js" />
     <Content Include="public\Content\scripts\scripts.js">
       <DependentUpon>scripts.js.bundle</DependentUpon>
     </Content>
@@ -1025,9 +1027,9 @@
     <Content Include="public\Content\fonts\fontawesome-webfont.ttf" />
     <Content Include="public\Content\fonts\fontawesome-webfont.woff" />
     <Content Include="public\Content\fonts\FontAwesome.otf" />
-    <Content Include="bower_components\bootstrap-css\css\bootsrap-variables.less" />
-    <Content Include="bower_components\bootstrap-css\css\bootsrap-variables.variables.css.map">
-      <DependentUpon>bootsrap-variables.variables.css</DependentUpon>
+    <Content Include="bower_components\bootstrap-css\css\bootstrap-variables.less" />
+    <Content Include="bower_components\bootstrap-css\css\bootstrap-variables.variables.css.map">
+      <DependentUpon>bootstrap-variables.variables.css</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1051,9 +1053,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\TimeServiceController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="ViewModels\TimeResponse.cs" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

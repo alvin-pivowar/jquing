@@ -13,15 +13,18 @@
     <file>/public/Content/scripts/jQueryUILib.js</file>
     <file>/public/Content/scripts/accordion/jqui-accordion.js</file>
     <file>/public/Content/scripts/dialog/jqui-dialog.js</file>
-	  <file>/public/Content/scripts/draggable/jqui-draggable.js</file>
+    <file>/public/Content/scripts/draggable/jqui-draggable.js</file>
 
     <file>/public/Content/scripts/DemoApp.js</file>
     <file>/public/Content/scripts/demo-routing.js</file>
+    <file>/public/Content/scripts/nav/localDateTime.js</file>
+
     <file>/public/Content/scripts/accordion/accordionCtrl.js</file>
     <file>/public/Content/scripts/dialog/dialogCtrl.js</file>
 	  <file>/public/Content/scripts/draggable/draggableCtrl.js</file>
     <file>/public/Content/scripts/nav/mainCtrl.js</file>
     <file>/public/Content/scripts/nav/navCtrl.js</file>
     <file>/public/Content/scripts/nav/navService.js</file>
+    <file>/public/Content/scripts/nav/timeService.js</file>
   </files>
 </bundle>

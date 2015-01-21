@@ -16,7 +16,6 @@
                     link: function (scope, element, attrs, ngModel) {
                         $(function () {
                             var currentActive;
-                            var disabled;
                             var options = {};
 
                             // initialization
@@ -66,9 +65,8 @@
                             }
 
                             // activate event
-                            $(element).on("accordionactivate", function (event, ui) {
+                            $(element).on("accordionactivate", function () {
                                 var activateInfo;
-                                var expression;
                                 var handler;
                                 var newActive;
                                 var newModelValue;

@@ -16,7 +16,7 @@
                     link: function (scope, element, attrs, ngModel) {
                         $(function () {
                             var anchor = {};
-                            var options;
+                            var options = {};
                             var position;
 
                             // initialization

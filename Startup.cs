@@ -1,4 +1,5 @@
-﻿using jquing;
+﻿using System.Linq;
+using jquing;
 using Microsoft.Owin;
 
 [assembly: OwinStartup(typeof(Startup))]
@@ -17,24 +18,28 @@ namespace jquing
         {
             var httpConfiguration = new HttpConfiguration();
 
-            // Configure Web API Routes:
-            // - Enable Attribute Mapping
-            // - Enable Default routes at /api.
+            // Use routing attributes.
             httpConfiguration.MapHttpAttributeRoutes();
-            httpConfiguration.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+
+            // Old-style routing.
+            //httpConfiguration.Routes.MapHttpRoute(
+            //    name: "DefaultApi",
+            //    routeTemplate: "api/{controller}/{id}",
+            //    defaults: new { id = RouteParameter.Optional }
+            //);
 
             app.UseWebApi(httpConfiguration);
+
+            // JSON payload by default.
+            var appXmlType = httpConfiguration.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");
+            httpConfiguration.Formatters.XmlFormatter.SupportedMediaTypes.Remove(appXmlType);
 
             // Make ./public the default root of the static files in our Web Application.
             app.UseFileServer(new FileServerOptions
             {
                 RequestPath = new PathString(string.Empty),
                 FileSystem = new PhysicalFileSystem("./public"),
-                EnableDirectoryBrowsing = true,
+                EnableDirectoryBrowsing = false,
             });
 
             app.UseStageMarker(PipelineStage.MapHandler);

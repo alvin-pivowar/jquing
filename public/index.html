@@ -26,6 +26,10 @@
     </header>
     <div class="row">
         <div class="col-md-2 list-group" ng-controller="navCtrl as vm">
+            <local-datetime interval-in-seconds="20">
+                <span>{{longMonthName}} {{day}}, {{year}}</span>
+                <span>{{hour12}}:{{minute}} {{meridiem}}</span>
+            </local-datetime>
             <a href="#draggable" class="list-group-item" ng-class='{active: (vm.selectedTab === "draggable")}'>Draggable</a>
             <a href="#accordion" class="list-group-item" ng-class='{active: (vm.selectedTab === "accordion")}'>Accordion</a>
             <a href="#dialog" class="list-group-item" ng-class='{active: (vm.selectedTab === "dialog")}'>Dialog</a>
